@@ -31,7 +31,7 @@ export default function Page() {
       })
       .then((result) => {
         console.log("register successfully :", result.data);
-        router.push("/login")
+        router.push("/login");
       })
       .catch((err) => {
         console.log(err.message);
@@ -51,7 +51,6 @@ export default function Page() {
               src="https://i.ibb.co/MR2tFCg/Logo.png"
               alt="logo"
             />
-            
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -161,6 +160,15 @@ export default function Page() {
                       >
                         Remember me
                       </label>
+                      <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Do you have account already?{" "}
+                        <a
+                          href="/login"
+                          className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        >
+                          Sign up
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>
