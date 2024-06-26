@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 
 const createTicket =()=>{
-    axios.post(`http://localhost:5000/tickets/create`)
+    axios.post(`https://notnulldeploay.onrender.com/tickets/create`)
 }
 
 const ticket = () => {

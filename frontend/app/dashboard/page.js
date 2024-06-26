@@ -70,7 +70,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/tickets/all`, {
+      .get(`https://notnulldeploay.onrender.com/tickets/all`, {
         headers: {
           authorization: `Bearer ${token}`
         }
@@ -96,7 +96,7 @@ export default function Dashboard() {
   const createTicketFun = () => {
     axios
       .post(
-        `http://localhost:5000/tickets/create`,
+        `https://notnulldeploay.onrender.com/tickets/create`,
         {
           title,
           photo,
@@ -123,7 +123,7 @@ export default function Dashboard() {
   const updateTicketFun = (id) => {
     axios
       .put(
-        `http://localhost:5000/tickets/update/${id}`,
+        `https://notnulldeploay.onrender.com/tickets/update/${id}`,
         {
           title,
           photo,
@@ -149,7 +149,7 @@ export default function Dashboard() {
 
   const deleteTicketFun = (id) => {
     axios
-      .delete(`http://localhost:5000/tickets/delete/${id}`, {
+      .delete(`https://notnulldeploay.onrender.com/tickets/delete/${id}`, {
         headers: {
           authorization: `Bearer ${token}`
         }

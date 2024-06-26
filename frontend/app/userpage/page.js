@@ -30,7 +30,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/tickets/all`, {
+      .get(`https://notnulldeploay.onrender.com/tickets/all`, {
         headers: {
           authorization: `Bearer ${token}`
         }
@@ -44,7 +44,7 @@ const ProfilePage = () => {
   }, [dispatch, token]);
   const fetchUserInfo = () => {
     axios
-      .get("http://localhost:5000/users", {
+      .get("https://notnulldeploay.onrender.com/users", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -69,7 +69,7 @@ const ProfilePage = () => {
     if (isDataModified) {
       axios
         .put(
-          "http://localhost:5000/users/update",
+          "https://notnulldeploay.onrender.com/users/update",
           {
             photo: imageUrl || user.photo,
             about: about || user.about,

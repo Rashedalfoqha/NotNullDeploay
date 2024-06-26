@@ -22,7 +22,7 @@ export default function Page() {
   const handleRegister = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/users/register", {
+      .post("https://notnulldeploay.onrender.com/users/register", {
         email,
         password,
         username: userName,

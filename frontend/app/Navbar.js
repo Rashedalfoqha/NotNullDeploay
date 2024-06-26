@@ -20,7 +20,7 @@ export default function Navbar() {
 
   const userInfo = () => {
     axios
-      .get("http://localhost:5000/users", {
+      .get("https://notnulldeploay.onrender.com/users", {
         headers: {
           authorization: `Bearer ${token}`
         }

@@ -22,7 +22,7 @@ const Message = () => {
 
   const getFollowers = useCallback(() => {
     axios
-      .get(`http://localhost:5000/followers`, {
+      .get(`https://notnulldeploay.onrender.com/followers`, {
         headers: {
           authorization: `Bearer ${auth.token}`,
         },
@@ -38,7 +38,7 @@ const Message = () => {
   const getAllMessage = useCallback(
     (id) => {
       axios
-        .get(`http://localhost:5000/messages/${id}`, {
+        .get(`https://notnulldeploay.onrender.com/messages/${id}`, {
           headers: {
             authorization: `Bearer ${auth.token}`,
           },
@@ -55,7 +55,7 @@ const Message = () => {
 
   const personalPage = useCallback(() => {
     axios
-      .get(`http://localhost:5000/users/${auth.userId}`)
+      .get(`https://notnulldeploay.onrender.com/users/${auth.userId}`)
       .then((result) => {
         dispatch(setUserInfo(result.data.result[0]));
       })
@@ -97,7 +97,7 @@ const Message = () => {
     };
 
     axios
-      .post(`http://localhost:5000/messages/${to}`, newMessage, {
+      .post(`https://notnulldeploay.onrender.com/messages/${to}`, newMessage, {
         headers: {
           authorization: `Bearer ${auth.token}`,
         },
