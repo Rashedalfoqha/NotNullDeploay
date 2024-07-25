@@ -156,7 +156,7 @@ export default function Navbar() {
                         className="h-8 w-8 rounded-full"
                         src={
                           user.photo ||
-                          "https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          "https://i.pinimg.com/564x/6c/cc/73/6ccc7364fddee013ccc20f659dc0b7be.jpg"
                         }
                         alt=""
                       />
