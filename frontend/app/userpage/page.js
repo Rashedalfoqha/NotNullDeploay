@@ -372,7 +372,7 @@ const ProfilePage = () => {
                   <img
                     src={
                       user.photo ||
-                      "https://randomuser.me/api/portraits/men/94.jpg"
+                      "https://i.pinimg.com/564x/6c/cc/73/6ccc7364fddee013ccc20f659dc0b7be.jpg"
                     }
                     class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0"
                   ></img>
