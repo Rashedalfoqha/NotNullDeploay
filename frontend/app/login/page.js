@@ -14,6 +14,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+
   const handleLoginUser = (e) => {
     e.preventDefault();
     axios
@@ -25,13 +26,33 @@ export default function Login() {
         console.log("Login successful:", result.data);
         dispatch(setUserId(result.data.userId));
         dispatch(setLogin(result.data.token));
-        // localStorage.setItem("token", result.data.token);
-        // localStorage.setItem("userId", result.data.userId);
         router.push("/home");
       })
       .catch((err) => {
         console.error(
           "Login failed:",
+          err.response ? err.response.data : err.message
+        );
+      });
+  };
+
+  const handleGuestLogin = () => {
+    const guestEmail = "guest@gmail.com"; 
+    const guestPassword = "hashed_guest_password"; 
+    axios
+      .post("https://notnulldeploay.onrender.com/users/login", {
+        email: guestEmail,
+        password: guestPassword
+      })
+      .then((result) => {
+        console.log("Guest login successful:", result.data);
+        dispatch(setUserId(result.data.userId));
+        dispatch(setLogin(result.data.token));
+        router.push("/home");
+      })
+      .catch((err) => {
+        console.error(
+          "Guest login failed:",
           err.response ? err.response.data : err.message
         );
       });
@@ -131,6 +152,13 @@ export default function Login() {
                   className="w-full text-zinc-950 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Sign in
+                </button>
+                <button
+                  type="button"
+                  onClick={handleGuestLogin}
+                  className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                >
+                  Guest Login
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
